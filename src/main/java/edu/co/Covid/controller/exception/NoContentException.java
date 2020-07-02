@@ -1,4 +1,4 @@
-package edu.co.Covid.controller.exception;
+package edu.co.covid.controller.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

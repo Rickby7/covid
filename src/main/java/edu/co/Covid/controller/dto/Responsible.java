@@ -1,4 +1,4 @@
-package edu.co.Covid.controller.dto;
+package edu.co.covid.controller.dto;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

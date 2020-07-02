@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="test.css">
+
+    <title>Encuesta</title>
+</head>
+
+<body class="bg-dark">
+
+<div class="w-75 center" >
+    <form>
+        <br>
+        <img src="https://ipuc.org.co/wp-content/uploads/2018/11/logo_inicio-1.png" style="height: 150px;" />
+        <span class="h1 text-light">IPUC Porvenir Bello</span>
+        <br>
+        <br>
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="documentNumber" placeholder="Ingrese el número de identificación">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="name" placeholder="Ingrese los nombres">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="cellphone" placeholder="Ingrese el número de celular">
+        </div>
+
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th scope="col" class="w-75"></th>
+                <th scope="col">SI</th>
+                <th scope="col">NO</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span>¿Tienes dolor de garganta?</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="garganta" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="garganta" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td><span>¿Tienes malestar general o escalofrío que te limite<u><strong> las actividades de la
+                                        vida diaria</strong></u>?</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="malestar" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="malestar" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td><span>¿Tienes dolor muscular o en los huesos?</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="muscular" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="muscular" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td><span>¿Tienes fiebre? (mayor a 38°C, medida con termómetro)</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="fiebre" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="fiebre" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td><span>¿Tienes tos seca y persistente?</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="tos" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="tos" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td><span>¿Tienes dificultad para respirar de inicio reciente?</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="respirar" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="respirar" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td><span>¿Tienes secreciones nasales o congestión nasal? (no relacionadas con procesos
+                                alérgicos)</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="congestion" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="congestion" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td><span>¿Tienes pérdida del olfato y/o el gusto?</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="olfato" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="olfato" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td><span>¿Vives con alguien en proceso de diagnóstico (le ordenaron
+                                prueba) o confirmado de
+                                tener COVID-19?</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="diagnostico" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="diagnostico" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            <tr>
+                <td><span>¿En los últimos 14 días has tenido contacto estrecho (por más de
+                                15 minutos, a menos
+                                de 2 metros y sin usar elementos de protección personal) con alguien en proceso de
+                                diagnóstico (le ordenaron prueba) o confirmado de tener COVID-19?</span></td>
+                <td>
+                    <input class="form-check-input" type="radio" name="contacto" id="inlineRadio1" value="option1">
+                </td>
+                <td>
+                    <input class="form-check-input" type="radio" name="contacto" id="inlineRadio2" value="option2" checked>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script>
+        $.postJSON = function(url, data, callback) {
+            return jQuery.ajax({
+                'type': 'POST',
+                'url': url,
+                'contentType': 'application/json',
+                'data': data,
+                'dataType': 'json',
+                'success': callback
+            });
+        };
+
+        $(document).ready(function() {
+
+        });
+
+
+        $('#documentNumber').focusout(function () {
+            var documentNumber = $('#documentNumber').val();
+            $.get(`http://localhost:8080/persons/${documentNumber}`, function(person) {
+                $('#name').val(person.fullName);
+                $('#cellphone').val(person.mobileNumber);
+            });
+        });
+    </script>
+</body>
+
+</html>

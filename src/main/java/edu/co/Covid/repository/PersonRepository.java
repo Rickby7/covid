@@ -1,6 +1,6 @@
-package edu.co.Covid.repository;
+package edu.co.covid.repository;
 
-import edu.co.Covid.controller.dto.Person;
+import edu.co.covid.controller.dto.Person;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

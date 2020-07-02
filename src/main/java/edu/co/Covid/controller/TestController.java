@@ -1,13 +1,9 @@
-package edu.co.Covid.controller;
+package edu.co.covid.controller;
 
-import edu.co.Covid.controller.dto.Person;
-import edu.co.Covid.controller.dto.Test;
-import edu.co.Covid.controller.dto.Worship;
-import edu.co.Covid.controller.exception.NoContentException;
-import edu.co.Covid.controller.exception.WrongWorshipException;
-import edu.co.Covid.repository.PersonRepository;
-import edu.co.Covid.repository.TestRepository;
-import edu.co.Covid.repository.WorshipRepository;
+import edu.co.covid.controller.dto.Person;
+import edu.co.covid.controller.dto.Test;
+import edu.co.covid.controller.exception.NoContentException;
+import edu.co.covid.repository.TestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,50 +14,44 @@ import java.util.List;
 @RequestMapping("/test")
 public class TestController {
 
-
+    private PersonController personController;
     private TestRepository testRepository;
-    private PersonRepository peopleRepository;
-    private WorshipRepository worshipRepository;
 
-    public TestController(TestRepository testRepository, PersonRepository peopleRepository, WorshipRepository worshipRepository) {
+    @Autowired
+    public TestController(PersonController personController, TestRepository testRepository) {
+        this.personController = personController;
         this.testRepository = testRepository;
-        this.peopleRepository = peopleRepository;
-        this.worshipRepository = worshipRepository;
     }
 
-    @GetMapping ("/")
-    public List <Test> viewTests () {
+    @GetMapping("/")
+    public List<Test> viewTests() {
         return testRepository.findAll();
     }
 
-    @GetMapping ("/{id}")
-    public Test viewTestsById (@PathVariable String id) {
+    @GetMapping("/{id}")
+    public Test viewTestsById(@PathVariable String id) {
         return testRepository.findById(id).orElseThrow(NoContentException::new);
     }
 
     @PostMapping("/{id}")
-    public void saveTest (@RequestBody Test test, String documentNumber, @PathVariable String id) {
-        Worship worship1 = worshipRepository.findById(id).orElseThrow(NoContentException::new);
-        Person person1 = test.getPerson();
+    public void saveTest(@RequestBody Test test) {
 
-       /* switch (person1.getWorship() != worship1) {break;*/
+        Person person
+                = personController.viewPersonByDocumentNumber(test.getPerson().getDocumentNumber());
 
-        if (!peopleRepository.findByDocumentNumber(documentNumber).isPresent()) {
-            peopleRepository.save(person1); }
-
-       else {
-            test.setPerson(person1);
+        if (personController.viewPersonByDocumentNumber(test.getPerson().getDocumentNumber()) == null) {
+            personController.savePerson(test.getPerson());
+        } else {
+            person.setFullName(test.getPerson().getFullName());
+            person.setMobile(test.getPerson().getMobile());
+            test.setPerson(person);
         }
-
-
         test.setDate(new Date());
         testRepository.save(test);
-
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTest (@PathVariable String id) {
+    public void deleteTest(@PathVariable String id) {
         testRepository.deleteById(id);
     }
-
 }

@@ -1,4 +1,4 @@
-package edu.co.Covid;
+package edu.co.covid;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
